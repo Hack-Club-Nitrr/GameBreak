@@ -1,0 +1,40 @@
+{
+  "data": [
+    {"link":"www.google.com",
+      "developer_name": "Aditya Ray",
+      "developer_avatar": "https://aditya-ray.github.io/ADITYA-RAY/static/media/myavatar.68c604dc.jpeg",
+      "thumbnail": "./assets/img/thumbnail.png",
+      "name": "Super Snake",
+      "about": "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi perspiciatis perferendis reiciendis officiis placeat quasi."
+    },
+    {"link":"www.google.com",
+      "developer_name": "Pramil Kesarwani",
+      "developer_avatar": "https://travishorn.com/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1627404475851%2F24u-J4UH6.jpeg%3Fw%3D70%26h%3D70%26fit%3Dcrop%26crop%3Dfaces%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=256&q=75",
+      "thumbnail": "https://travishorn.com/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1645717679021%2FZmIYsPQNe.png%3Fw%3D500%26h%3D262%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
+      "name": "Super Snake",
+      "about": "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi perspiciatis perferendis reiciendis officiis placeat quasi."
+    },
+    {"link":"www.google.com",
+      "developer_name": "Pratham Gandhi",
+      "developer_avatar": "https://travishorn.com/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1627404475851%2F24u-J4UH6.jpeg%3Fw%3D70%26h%3D70%26fit%3Dcrop%26crop%3Dfaces%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=256&q=75",
+      "thumbnail": "./assets/img/thumbnail.png",
+      "name": "Super Snake",
+      "about": "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi perspiciatis perferendis reiciendis officiis placeat quasi."
+    },
+    {"link":"www.google.com",
+        "developer_name": "Pratham Gandhi",
+        "developer_avatar": "https://travishorn.com/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1627404475851%2F24u-J4UH6.jpeg%3Fw%3D70%26h%3D70%26fit%3Dcrop%26crop%3Dfaces%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=256&q=75",
+        "thumbnail": "./assets/img/thumbnail.png",
+        "name": "Super Snake",
+        "about": "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi perspiciatis perferendis reiciendis officiis placeat quasi."
+      },{
+        "link":"www.google.com",
+        "developer_name": "Pratham Gandhi",
+        "developer_avatar": "https://travishorn.com/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1627404475851%2F24u-J4UH6.jpeg%3Fw%3D70%26h%3D70%26fit%3Dcrop%26crop%3Dfaces%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=256&q=75",
+        "thumbnail": "./assets/img/thumbnail.png",
+        "name": "Super Snake",
+        "about": "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi perspiciatis perferendis reiciendis officiis placeat quasi."
+      }
+
+  ]
+}
