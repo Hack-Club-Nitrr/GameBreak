@@ -1,4 +1,5 @@
 # GameBreak
+
 Gamebreak is an open source web based collection of mini games made using javascript. The aim of the project is to unleash the creativity of javascript developers and assemble a collection of free and fun web games.
 
 ## Contributing ##
@@ -21,5 +22,6 @@ cd homepage/assets/json
 ```
 - Push your changes.
 - Create a new pull request from your forked repository.
+
 
 
