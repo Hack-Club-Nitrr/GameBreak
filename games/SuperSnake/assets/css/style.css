@@ -1,0 +1,158 @@
+@font-face {
+    font-family: "Lexend Deca Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Lexend Deca Regular"),
+      url("../fonts/LexendDecaRegular.woff") format("woff");
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0 auto;
+    background: #323437;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    max-width: 1600px;
+    font-family: "Lexend Deca Regular";
+  }
+  
+  .box {
+    position: fixed;
+    border: 1px solid #64666980;
+    margin: 0vh auto;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-size: 24px 24px;
+    background-image: linear-gradient(to right, #64666980 1px, transparent 1px),
+      linear-gradient(to bottom, #64666980 1px, transparent 1px);
+    overflow: hidden;
+  }
+  
+  .snake {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    background: radial-gradient(#e2b714, #c59a00);
+    box-shadow: 0px 0px 4px 2px #c59a009e;
+  }
+  
+  .fruit {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    background: radial-gradient(#008cff, #005aa4);
+    box-shadow: 0px 0px 4px 2px #005aa461;
+  }
+  
+  #score {
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    width: fit-content;
+    height: 50px;
+    color: #d1d0c5;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: #d1d0c5;
+    padding: 20px;
+  }
+  
+  #reload,#settings {
+    display: inline;
+    font-size: 20px;
+    color: #787878;
+    cursor: pointer;
+    font-weight: 900;
+  }
+  
+  #reload:hover,#settings:hover {
+    color: #c59a00;
+  }
+  
+  @keyframes blink {
+    from {
+      background: radial-gradient(#e2b714, #c59a00);
+      box-shadow: 0px 0px 4px 2px #c59a009e;
+    }
+    to {
+      background: radial-gradient(#e26a14, #c58300);
+      box-shadow: 0px 0px 4px 2px #c58300;
+    }
+  }
+  
+  .credits {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #d1d0c57c;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .credits a {
+    text-decoration: none;
+    color: #c59a00b9;
+    text-decoration-line: underline;
+  }
+  
+  .mobile {
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    color: #c59a00;
+    font-size: 60px;
+    display: none;
+  }
+  
+  .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .bottom i {
+    padding: 15px;
+  }
+  
+  @media screen and (max-width: 767px) {
+    
+    .mobile {
+      display: block;
+    }
+  
+    .box {
+      top: 60%;
+      left: 50%;
+      -ms-transform: translate(-50%, -100%);
+      transform: translate(-50%, -100%);
+    }
+  
+    .title {
+      font-size: 22px;
+      padding: 20px;
+    }
+  
+    #score {
+      top: 20px;
+      right: 20px;
+      font-size: 18px;
+    }
+  }
