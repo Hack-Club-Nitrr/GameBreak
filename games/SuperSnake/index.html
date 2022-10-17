@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>SUPER SNAKE</title>
+  </head>
+  <body >
+    <div class="title">
+      &#128013; supersnake
+      <div id="settings" onclick="restart()"><i class="fa fa-refresh" aria-hidden="true"></i></div>
+      <div id="reload" onclick="takeshot()"><i class="fa fa-picture-o"></i></div>
+    </div>
+
+    <div id="score">score : 0</div>
+    
+    <div class="box" id="box">
+      <div class="snake" id="move"></div>
+      <div class="fruit" id="fruit"></div>
+    </div>
+
+    <div class="credits">
+      made with &#129505; by  <span style="color: #c59a00b9;"><a target="_blank" href="https://aditya-ray.github.io/ADITYA-RAY/">Aditya Ray</a></span> 
+    </div>
+
+    <!-- control for smaller devices -->
+    <div class="mobile">
+      <div class="top"><i class="fa fa-arrow-circle-up" onclick="handleKey('up')"></i></div>
+      <div class="bottom">
+        <div class="left"><i class="fa fa-arrow-circle-left" onclick="handleKey('left')"></i></div>
+        <div class="down"><i class="fa fa-arrow-circle-down" onclick="handleKey('down')"></i></div>
+        <div class="right"><i class="fa fa-arrow-circle-right" onclick="handleKey('right')"></i></div>
+      </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+  </body>
+</html>
