@@ -7,7 +7,11 @@ body {
   overflow-x: hidden;
   margin: 0;
 }
-
+#particles-js {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
 .guards {
   width: 400px;
   position: absolute;
@@ -110,8 +114,8 @@ body {
   border-radius: 8px;
   font-family: "Comfortaa", cursive;
 }
-.card a{
-    text-decoration: none;
+.card a {
+  text-decoration: none;
 }
 .cards {
   max-width: 1000px;
@@ -165,4 +169,33 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 767px) {
+  .hero_section {
+    padding: 80px 30px;
+  }
+  .hero_text {
+    position: relative;
+    font-size: 2.4rem;
+    color: white;
+    max-width: 90%;
+    text-transform: capitalize;
+  }
+  .sub_text {
+    font-size: 1.4rem;
+    color: rgba(255, 122, 233, 0.511);
+    max-width: 90%;
+    text-transform: capitalize;
+    margin-top: 20px;
+    font-weight: lighter;
+  }
+  .guards {
+    width: 100%;
+    bottom: 0;
+    right: 0;
+  }
+  .social {
+    display: none;
+  }
 }
