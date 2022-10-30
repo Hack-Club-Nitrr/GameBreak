@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const startBtn = document.querySelector('#start-button')
     // query selector is like getElementById or getElementByClassName
     const width = 10
-    let nextRandom = 0
+    let nextRandom = null
     let timerId
     let score = 0
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const zTetromino = [
         [width*1+1,width*1+2,width*2+0,width*2+1],
         [width*0+0,width*1+0,width*1+1,width*2+1],
-        [width*0+1,width*0+2,width+1+0,width*1+1],
+        [width*0+1,width*0+2,width*1+0,width*1+1],
         [width*0+1,width*1+1,width*1+2,width*2+2]
     ]
     const tTetromino = [
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         zTetromino,
         tTetromino,
         oTetromino,
-        iTetromino,
+        iTetromino
     ]
 
     let currentPosition = 0
@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     // make the tetromino move down every second
     // timerId = setInterval(moveDown,1000)
 
+
+
     // assign function to keyCodes
     function control(e) {
         if(e.keyCode === 37) {
@@ -86,7 +88,6 @@ document.addEventListener('DOMContentLoaded',()=>{
             moveDown()
         }
     }
-    document.addEventListener('keyup',control)
 
     function moveDown() {
         undraw()
@@ -107,7 +108,9 @@ document.addEventListener('DOMContentLoaded',()=>{
             currentPosition = Math.floor(Math.random()*7)
             displayShape()
             draw()
-            // addScore()
+            if(layerComplete(19)) {
+                addScore()
+            }
         }
     }
 
@@ -140,11 +143,15 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     function rotate() {
         undraw()
-        currentRotation ++
-        if(currentRotation == current.length) {
-            currentRotation = 0
+        currentRotation = (currentRotation+1)%current.length
+        let t = theTetrominos[random][currentRotation]
+        if((t.some(index => (currentPosition+index)%width===0)) && 
+            (t.some(index => (currentPosition+index)%width===width-1))){
+                currentRotation = (currentRotation-1)%current.length
+            }
+        else {
+            current = t
         }
-        current = theTetrominos[random][currentRotation]
         draw()
     }
 
@@ -183,34 +190,43 @@ document.addEventListener('DOMContentLoaded',()=>{
         if(timerId) {
             clearInterval(timerId)
             timerId = null
+            document.removeEventListener('keyup',control)
         } else {
             draw()
-            timerId = setInterval(moveDown,1000)
-            nextRandom = Math.floor(Math.random()*theTetrominos.length)
-            displayShape()
+            timerId = setInterval(moveDown,400)
+            document.addEventListener('keyup',control)
+            if(nextRandom == null){
+                nextRandom = Math.floor(Math.random()*theTetrominos.length)
+                displayShape()
+            }
         }
     })
 
+    
+    // checking if last layer is completed
+    function layerComplete(r) {
+        let k = r*10
+        const row = [k,k+1,k+2,k+3,k+4,k+5,k+6,k+7,k+8,k+9]
 
-
+        if(row.every(index => squares[index].classList.contains('taken'))) {
+            score += 10
+            scoreDisplay.innerHTML = score
+            console.log("Here we go with the removal of this particular layer")
+            return true
+        }
+        return false
+    }
 
     // adding score 
     function addScore() {
-        for (let i=0 ; i<199 ; i+=width) {
-            const row = [i,i+1,i+2,i+3,i+4,i+5,i+6,i+7,i+8,i+9]
+        const k = 190
+        const row = [k,k+1,k+2,k+3,k+4,k+5,k+6,k+7,k+8,k+9]
 
-            if(row.every(index => squares[index].classList.contains('taken'))) {
-                score += 10
-                scoreDisplay.innerHTML = score
-            }
-            row.forEach(index => {
-                squares[index].classList.remove('taken')
-                squares[index].classList.remove('tetromino')
-            })
-            const squaresRemoved = squares.splice(i,width)
-            squares = squaresRemoved.concat(squares)
-            squares.forEach(cell => grid.appendChild(cell))
-        }
+        row.forEach(index => {
+            squares[index].classList.remove('tetromino')
+            squares[index].classList.remove('taken')
+        })
+        moveGridOneDown()
     }
 
 
@@ -218,5 +234,22 @@ document.addEventListener('DOMContentLoaded',()=>{
     // game over
     function gameOver() {
 
+    }
+
+    function moveGridOneDown() {
+        for (let i=199 ; i>=width ; i--) {
+            if(squares[i-width].classList.contains('tetromino')) {
+                squares[i].classList.add('tetromino')
+                squares[i].classList.add('taken')
+                squares[i-width].classList.remove('tetromino')
+                squares[i-width].classList.remove('taken')
+            }
+        }
+        for (let i=width-1 ; i>=0 ; i--) {
+            if(squares[i].classList.contains('tetromino')){
+                squares[i].classList.remove('tetromino')
+                squares[i].classList.remove('taken')
+            }
+        }
     }
 })
