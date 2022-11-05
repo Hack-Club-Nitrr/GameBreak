@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZapTap</title>
+    <style>
+      body {
+        background: black;
+        color: white;
+        overflow: hidden;
+      }
+      .warning {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: black;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+      }
+      @media screen and (max-width:767px) {
+        .warning {
+          display: flex;
+        }
+
+      }
+      .box_outer{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+      button{
+        border: none;
+        padding: 0;
+      }
+      .box_top{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: rgb(255, 0, 93);
+      }
+      .box_bottom{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: rgb(0, 255, 60);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warning">Designed for touch devices only!</div>
+    <div class="box_outer">
+      <button class="box_top" id="top" onclick="clicked('top')"></button>
+      <button class="box_bottom" id="bottom" onclick="clicked('bottom')"></button>
+    </div>
+    <script>
+        function clicked(box){
+            var top=document.getElementById("top");
+            var bottom=document.getElementById("bottom");
+
+            if(box==="top"){
+                top.style.height=top.offsetHeight+10 +"px";
+                bottom.style.height=bottom.offsetHeight-10 +"px";
+                if(bottom.offsetHeight<=30){
+                    alert("pink wins")
+                }
+            }else{
+                top.style.height=top.offsetHeight-10 +"px";
+                bottom.style.height=bottom.offsetHeight+10 +"px"; 
+                if(top.offsetHeight<=30){
+                    alert("green wins")
+                }
+            }
+
+        }
+    </script>
+  </body>
+</html>
