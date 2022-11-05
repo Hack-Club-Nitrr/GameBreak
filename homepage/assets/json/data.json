@@ -6,6 +6,20 @@
       "thumbnail": "../games/SuperSnake/assets/img/thumbnail.png",
       "name": "Super Snake",
       "about": " Remember the days when we used to play the snake game 🐍 on our dad's feature phone😁 ? Though it is rare now, let's revisit those old days. I made this game called 'Super Snake' after I suddenly remembered it and got caught in a wave of nostalgia😅."
+    },
+    {"link":"https://hack-club-nitrr.github.io/GameBreak/games/Tetris",
+      "developer_name": "Pranahul Hatwar",
+      "developer_avatar": "https://avatars.githubusercontent.com/u/87566575?v=4",
+      "thumbnail": "../games/Tetris/assets/img/thumbnail.png",
+      "name": "Tetris",
+      "about": " "
+    },
+    {"link":"https://hack-club-nitrr.github.io/GameBreak/games/ZapTap",
+      "developer_name": "Aditya Ray",
+      "developer_avatar": "https://aditya-ray.github.io/ADITYA-RAY/static/media/myavatar.68c604dc.jpeg",
+      "thumbnail": "../games/ZapTap/assets/img/thumbnail.png",
+      "name": "ZapTap",
+      "about": ""
     }
   ]
 }
